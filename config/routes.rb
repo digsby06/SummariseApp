@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :pages
+  resources :summaries
+  resources :books
+  resources :goals
   devise_for :users
   root 'welcome#index'
   resources :users, only: [:show, :index]

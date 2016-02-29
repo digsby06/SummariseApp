@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228220451) do
+ActiveRecord::Schema.define(version: 20160229165640) do
+
+  create_table "books", force: :cascade do |t|
+    t.string   "book_title"
+    t.string   "book_author"
+    t.integer  "page_amount"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.text     "set_goal"
+    t.boolean  "met_goal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "page_amount"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "book_id"
+  end
+
+  create_table "summaries", force: :cascade do |t|
+    t.string   "post_title"
+    t.text     "summary_entry"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "", null: false

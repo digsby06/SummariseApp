@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: true
+
+  has_many :books
+  has_many :goals
+  has_many :summaries
+  has_many :pages
 end
