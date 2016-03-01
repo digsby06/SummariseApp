@@ -1,1 +1,16 @@
-show.html.erb
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h3>About Me</h3>
+				<small><%= @user.favorite_book %></small>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-3">
+				<h3><%= @user.username %></h3>
+				<p>Bio: <%= @user.bio %> </p>
+			</div>
+		</div>	
+	</div>
+</div>

@@ -16,6 +16,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to "Profile", user_path(current_user.username) %></li>
             <li><%= link_to 'Track Pages', "#" %></li>
             <li><%= link_to 'Write Summary', "#" %></li>
             <li><%= link_to 'Set Goal', "#" %></li>
@@ -24,7 +25,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-cog"></span></a>
                   <ul class="dropdown-menu">
-                    <li><%= link_to 'Settings', "#" %></li>
+                    <li><%= link_to 'Settings', edit_user_registration_path %></li>
                     <li><%= link_to 'Help', "#" %></li>
                     <li role="separator" class="divider"></li>
                     <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
