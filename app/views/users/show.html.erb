@@ -2,15 +2,36 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<h3>About Me</h3>
-				<small><%= @user.favorite_book %></small>
+				<h2><%= @user.username %></h2>
+				<h5>Favorite Book: <%= @user.favorite_book %><h5>
+			</div>
+			<div class="col-md-5">
+				<%= render "users/trackpages" %>
+			</div>
+			<div class="col-md-4">
+				<%= render "users/view_goals" %>
 			</div>
 		</div>	
 		<div class="row">
 			<div class="col-md-3">
-				<h3><%= @user.username %></h3>
-				<p>Bio: <%= @user.bio %> </p>
+				<p><%= @user.bio %> </p>
 			</div>
 		</div>	
 	</div>
 </div>
+
+<div class="container">
+	<div class="wrap">
+		<%= render "users/trophycase" %>
+	</div>
+</div>
+
+<div class="container">
+	<div class="wrap">
+		<%= render "users/my_summaries" %>
+	</div>
+</div>
+
+
+
+
