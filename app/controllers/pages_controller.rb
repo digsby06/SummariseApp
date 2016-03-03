@@ -15,10 +15,12 @@ class PagesController < ApplicationController
   # GET /pages/new
   def new
     @page = Page.new
+    @books = Book.all
   end
 
   # GET /pages/1/edit
   def edit
+    @books = Book.all
   end
 
   # POST /pages

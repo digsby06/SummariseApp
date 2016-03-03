@@ -8,7 +8,9 @@ before_action :set_user, only: [:show]
   def show
   @books = Book.all
   end
-
+  
+ 
+  
   private
 
   def set_user

@@ -17,15 +17,71 @@
 .hidden {
     display: none;
 }
+
+/*************************** NAVIGATION BAR STYLES */
+
 .navbar {
     margin-bottom: 0px;
+    padding-right: 60px;
 }
 
-.navbar-default {
+.navbar-fixed-top {
   background-color: #f5f5f5;
+  height: 61px;
   margin-bottom: 0px;
   border-radius: 0px;
   border-color: #f5f5f5;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.sidebar .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px 0px 0px;
+}
+
+.nav a {
+  color: #65696D;
+  text-decoration: none;
+}
+.nav > li > a:hover a:active {
+    color: black;
+}
+
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+}
+
+/*************************** BODY STYLES */
+
+.bg{
+  background: url(Summarise_Header.png) no-repeat fixed;
+  position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  top:0;
+  left:0;
+  z-index: -1;
 }
 
 .jumbotron{
@@ -43,38 +99,15 @@
   padding-bottom: 40px;
 }
 
-.bg{
-  background: url(Summarise_Header.png) no-repeat fixed;
-  position: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  top:0;
-  left:0;
-  z-index: -1;
-}
-
-.sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-}
-
 .book-button {
   float: right;
 }
 
+#body-container{
+    margin-left: 140px;
+    margin-right: 60px;
+    margin-top: 40px;
+}
 
 /* Slider styles */
 
@@ -88,60 +121,30 @@ body {
   background: #e8e8e8; 
 }
 
-.excess {
-  width: 100%;
-}
-
 .well {
   display: inline-block;
   height: 225px;
-  width: 225px;
+  width: 200px;
   overflow: hidden;
 }
 
-#basic {
-  display: inline-block;
-}
 
 .container { 
   margin: 0 auto; 
 }
 
-/* Example wrapper */
-.wrap {
-  position: relative;
-  margin: 3em 0;
-}
 
 /* Frame */
-.frame {
+.frame { 
+  padding-left: 50px;
+  padding-top: 25px; 
   height: 250px;
-  line-height: 250px;
-  overflow: hidden;
-  display: block;
+  overflow: scroll; 
 }
-.frame ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-size: 40px;
+.frame .slidee { 
+  margin: 0; padding: 1em; 
 }
-.frame ul li {
-  float: left;
-  width: 227px;
-  height: 100%;
-  margin: 0 1px 0 0;
-  padding: 0;
-  background: #333;
-  color: #ddd;
-  text-align: center;
-  cursor: pointer;
-}
-.frame ul li.active {
-  color: #fff;
-  background: #a03232;
-}
+
 
 /* Scrollbar */
 .scrollbar {
@@ -203,3 +206,11 @@ body {
 .crazy ul li:nth-child(3n) { width: 300px; margin: 0 10px 0 5px; }
 .crazy ul li:nth-child(4n) { width: 400px; margin: 0 30px 0 2px; }
 
+.items { margin: 0; padding: 5px; list-style: none; }
+.items li { 
+  float: left; 
+  width: 235px; 
+  height: 300px; 
+  margin: 5px; 
+  line-height: 300px; 
+  font-size: 40px; color: #fff; background: #292a33; text-align: center; }
