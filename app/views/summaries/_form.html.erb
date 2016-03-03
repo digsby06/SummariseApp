@@ -1,12 +1,28 @@
 <%= simple_form_for(@summary) do |f| %>
-  <%= f.error_notification %>
+  <% if @summary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(summary.errors.count, "error") %> prohibited this summary from being saved:</h2>
 
-  <div class="form-inputs">
-    <%= f.input :post_title %>
-    <%= f.input :summary_entry %>
+      <ul>
+      <% @summary.errors.full_messages.each do |summary| %>
+        <li><%= summary %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :post_title %>
   </div>
-
+  <div class="field">
+    <%= f.text_area :summary_entry, rows: 15 %>
+  </div>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+<br>
+
+
+
+  

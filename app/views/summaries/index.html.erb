@@ -1,5 +1,42 @@
 <p id="notice"><%= notice %></p>
 
+<div class="pull-right">
+  <%= link_to 'New Summary', new_summary_post_path, class: "btn btn-info" %>
+  <td><%= summary.post_title %></td>
+  <td><%= summary.summary_entry %></td>
+</div>
+
+<h1>All Blog Posts</h1>
+
+<div class="row">
+  <% @summaries.each do |summary| %>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3><%= link_to summary.post_title, summary %></h3>
+        </div>
+        <div class="panel-body">
+          <p>by <%= link_to summary.user.username, user_path(summary.user_id) %></p>
+          <p><small><em><%= time_ago_in_words(summary.created_at) %> ago</em></small></p>
+
+          <p><%= (summary.[0..250]) %>... <%= link_to "[ READ MORE ]", summary %></p>
+        </div>
+        <div class="panel-footer">
+          <%= link_to edit_summary_path(summary), class: "btn btn-sm btn-warning" do %>
+            <i class="glyphicon glyphicon-pencil"></i>
+          <% end %>
+          <%= link_to summary, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" do %>
+              <i class='glyphicon glyphicon-trash'></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<p id="notice"><%= notice %></p>
+
 <h1>Listing Summaries</h1>
 
 <table>
@@ -14,8 +51,7 @@
   <tbody>
     <% @summaries.each do |summary| %>
       <tr>
-        <td><%= summary.post_title %></td>
-        <td><%= summary.summary_entry %></td>
+        
         <td><%= link_to 'Show', summary %></td>
         <td><%= link_to 'Edit', edit_summary_path(summary) %></td>
         <td><%= link_to 'Destroy', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
