@@ -5,11 +5,13 @@ class GoalsController < ApplicationController
   # GET /goals.json
   def index
     @goals = Goal.all
+    @goal = Goal.new
   end
 
   # GET /goals/1
   # GET /goals/1.json
   def show
+    @goals = Goal.all
   end
 
   # GET /goals/new
@@ -69,6 +71,6 @@ class GoalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
-      params.require(:goal).permit(:set_goal, :met_goal, :user_id)
+      params.require(:goal).permit(:username, :set_goal, :met_goal, :user_id)
     end
 end

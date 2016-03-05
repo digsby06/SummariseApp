@@ -6,9 +6,10 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
+
+<body>
 <nav><%= render 'layouts/navbar' %></nav>
 <div><%= render 'layouts/sidebar' %></div>	
-<body id="body-container">
 
 <%= yield %>
 

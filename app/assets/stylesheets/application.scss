@@ -14,6 +14,47 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face{font-family:'proxima_nova_rgbold';src:url('../fonts/proximanova-bold-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_novasemibold';src:url('../fonts/proximanova-semibold-webfont.ttf') format('truetype');font-weight:normal;font-style:normal;}
+@font-face{font-family:'proxima_novalight';src:url('../fonts/proximanova-light-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_rgregular';src:url('../fonts/proximanova-regular-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_novaregular_italic';src:url('../fonts/proximanova-regularitalic-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_thinthin';src:url('../fonts/proximanova-thin-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_condensedlight';src:url('../fonts/proximanovacond-light-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_cn_rgregular';src:url('../fonts/proximanovacond-regular-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_condensedRgIt';src:url('../fonts/proximanovacond-regularit-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_condensedSBd';src:url('../fonts/proximanovacond-semibold-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_cn_ththin';src:url('../fonts/proximanovacond-thin-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+
+/*************************** FONTS */
+
+// Proxima Nova
+$proxima-nova: "proxima_nova_rgregular";
+$proxima-nova-bold: "proxima_nova_rgbold";
+$proxima-nova-semibold: "proxima_novasemibold";
+$proxima-nova-light: "proxima_novalight";
+$proxima-nova-italic: "proxima_novaregular_italic";
+$proxima-nova-thin: "proxima_nova_thinthin";
+
+// Proxima Nova Condensed
+$proxima-nova-condensed: "proxima_nova_cn_rgregular";
+$proxima-nova-condensed-bold: "proxima_nova_condensedSBd";
+$proxima-nova-condensed-light: "proxima_nova_condensedlight";
+$proxima-nova-condensed-italic: "proxima_nova_condensedRgIt";
+$proxima-nova-condensed-thin: "proxima_nova_cn_ththin";
+
+.proxima-nova { font-family: $proxima-nova; }
+.proxima-nova-bold { font-family: $proxima-nova-bold; }
+.proxima-nova-semibold { font-family: $proxima-nova-semibold; }
+.proxima-nova-thin { font-family: $proxima-nova-thin; }
+.proxima-nova-light { font-family: $proxima-nova-light; }
+.proxima-nova-italic { font-family: $proxima-nova-italic; }
+.proxima-nova-condensed { font-family: $proxima-nova-condensed; }
+.proxima-nova-condensed-bold { font-family: $proxima-nova-condensed-bold; }
+.proxima-nova-condensed-thin { font-family: $proxima-nova-condensed-thin; }
+.proxima-nova-condensed-light { font-family: $proxima-nova-condensed-light; }
+.proxima-nova-condensed-italic { font-family: $proxima-nova-condensed-italic; }
+
 .hidden {
     display: none;
 }
@@ -25,12 +66,12 @@
     padding-right: 60px;
 }
 
+
 .navbar-fixed-top {
-  background-color: #f5f5f5;
+  background-color: #252c57;
   height: 61px;
   margin-bottom: 0px;
   border-radius: 0px;
-  border-color: #f5f5f5;
 }
 
 .navbar-fixed-bottom, .navbar-fixed-top {
@@ -40,18 +81,20 @@
     z-index: 1030;
 }
 
-.sidebar .nav > li > a {
-  position: relative;
-  display: block;
-  padding: 10px 15px 0px 0px;
+.nav a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-family: $proxima-nova-bold,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.nav a {
-  color: #65696D;
-  text-decoration: none;
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #007494;
 }
-.nav > li > a:hover a:active {
-    color: black;
+
+.navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 21px;
 }
 
 .sidebar {
@@ -59,13 +102,62 @@
     top: 51px;
     bottom: 0;
     left: 0;
+    width: 81px;
     z-index: 1000;
     display: block;
-    padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #f5f5f5;
+    background-color: #252c57;
     border-right: 1px solid #eee;
+}
+
+
+.sidebar .nav > li > a {
+  position: relative;
+  display: block;
+}
+
+/*************************** FOUNDATION STYLES */
+
+
+body {
+    width: 980px;
+    height: 100%;
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-top: 120px;
+    font-family: $proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #00C5C5;
+    background: #EBEBF2; 
+}
+
+#body-container{
+    margin-left: 140px;
+    margin-right: 60px;
+    margin-top: 40px;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    font-family: $proxima-nova-bold,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #211F51;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0 0 25px;
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 /*************************** BODY STYLES */
@@ -103,22 +195,13 @@
   float: right;
 }
 
-#body-container{
-    margin-left: 140px;
-    margin-right: 60px;
-    margin-top: 40px;
-}
-
-/* Slider styles */
+/******************* CONTAINER/SECTION STYLES */
 
 .wrap {
     position: relative;
     margin: 3em 0;
+    margin-right: 80px;
     overflow: hidden;
-}
-
-body { 
-  background: #e8e8e8; 
 }
 
 .well {
