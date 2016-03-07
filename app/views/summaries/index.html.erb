@@ -1,29 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="pull-right">
+ <% if user_signed_in? %>
 
-<h1>Listing Summaries</h1>
+  <%= link_to 'New Summary', new_summary_path, class: 'btn btn-info' %>
+</div>
+  <% end %>
+<h1>Summaries</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Post title</th>
-      <th>Summary entry</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <% @summaries.sort_by{|t| - t.created_at.to_i}.each do |summary| %>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3><%= link_to summary.post_title, summary %></h3>
+          </div>
 
-  <tbody>
-    <% @summaries.each do |summary| %>
-      <tr>
-        <td><%= summary.post_title %></td>
-        <td><%= summary.summary_entry %></td>
-        <td><%= link_to 'Show', summary %></td>
-        <td><%= link_to 'Edit', edit_summary_path(summary) %></td>
-        <td><%= link_to 'Destroy', summary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <div class="panel-body">
+              <p>by <%= summary.user.username %></p>
+              <p><small><em><%= time_ago_in_words(summary.created_at) %> ago</em></small></p>
 
-<br>
+              <p><%= summary[0..250] %>... <%= link_to '[READ MORE]', summary %>
+              </p>
+          </div>
+        <div class="panel-footer">
 
-<%= link_to 'New Summary', new_summary_path %>
+            <% if user_signed_in? &&current_user == summary.user %>
+      
+              <%= link_to edit_summary_path(summary), class: 'btn btn-sm btn-warning' do %> 
+              <i class='glyphicon glyphicon-pencil'> </i>
+
+              <%= link_to summary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' do %>
+                <i class= "glyphicon glyphicon-trash"></i>
+               <% end %>  
+            <% end %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

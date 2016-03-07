@@ -10,6 +10,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1
   # GET /summaries/1.json
   def show
+    
   end
 
   # GET /summaries/new
@@ -20,6 +21,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1/edit
   def edit
   end
+
 
   # POST /summaries
   # POST /summaries.json
