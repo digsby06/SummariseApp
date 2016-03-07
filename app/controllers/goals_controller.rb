@@ -18,6 +18,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new
   end
 
+
   # GET /goals/1/edit
   def edit
   end
@@ -67,6 +68,10 @@ class GoalsController < ApplicationController
     def set_goal
       @goal = Goal.find(params[:id])
     end
+
+     def set_comment
+      @goals = Goal.find(params[:id])
+  end 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
