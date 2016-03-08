@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :set_goal, only: [:show, :edit, :update, :destroy]
+  before_action :set_goal, only: [:show, :edit, :update, :destroy, :met]
 
   # GET /goals
   # GET /goals.json
@@ -44,8 +44,8 @@ class GoalsController < ApplicationController
   def update
     respond_to do |format|
       if @goal.update(goal_params)
-        format.html { redirect_to @goal, notice: 'Goal was successfully updated.' }
-        format.json { render :show, status: :ok, location: @goal }
+        format.html { redirect_to goals_url, notice: 'Goal was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @goal }
       else
         format.html { render :edit }
         format.json { render json: @goal.errors, status: :unprocessable_entity }

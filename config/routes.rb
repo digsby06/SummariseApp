@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   resources :summaries
   resources :books
   resources :goals
+  # put '/goals' => 'goals#update'
   devise_for :users
   root 'welcome#index'
   resources :users, only: [:show, :index]
- 
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
