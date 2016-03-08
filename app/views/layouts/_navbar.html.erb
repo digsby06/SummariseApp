@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to(image_tag("#", :alt => "logo", :title => "Home"), root_path) %>
+      <%= link_to(image_tag("Summarise_logo.png", :alt => "logo", :title => "Home", class: "main_logo"), root_path) %>
     </div>
       
       <% if current_user %>
@@ -16,15 +16,16 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'Home', root_path %></li>
-            <li><%= link_to 'Track Pages', "#" %></li>
-            <li><%= link_to 'Write A Summary', new_summary_path %></li>
-            <li><%= link_to 'Set Goal', "#" %></li>
+            <li><%= link_to 'Track Pages', new_page_path %></li>
+            <li><%= link_to 'Write Summary', new_summary_path %></li>
+            <li><%= link_to 'Set Goal', new_goal_path %></li>
+
             <ul class="nav navbar-nav navbar-right">
                 <li></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-cog"></span></a>
                   <ul class="dropdown-menu">
-                    <li><%= link_to 'Settings', "#" %></li>
+                    <li><%= link_to 'Settings', edit_user_registration_path %></li>
                     <li><%= link_to 'Help', "#" %></li>
                     <li role="separator" class="divider"></li>
                     <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>

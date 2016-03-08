@@ -14,26 +14,163 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face{font-family:'proxima_nova_rgbold';src:url('../fonts/proximanova-bold-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_novasemibold';src:url('../fonts/proximanova-semibold-webfont.ttf') format('truetype');font-weight:normal;font-style:normal;}
+@font-face{font-family:'proxima_novalight';src:url('../fonts/proximanova-light-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_rgregular';src:url('../fonts/proximanova-regular-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_novaregular_italic';src:url('../fonts/proximanova-regularitalic-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_thinthin';src:url('../fonts/proximanova-thin-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_condensedlight';src:url('../fonts/proximanovacond-light-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_cn_rgregular';src:url('../fonts/proximanovacond-regular-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_condensedRgIt';src:url('../fonts/proximanovacond-regularit-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_condensedSBd';src:url('../fonts/proximanovacond-semibold-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'proxima_nova_cn_ththin';src:url('../fonts/proximanovacond-thin-webfont.ttf') format('truetype');font-weight:normal;font-style:normal}
+
+/*************************** FONTS */
+
+// Proxima Nova
+$proxima-nova: "proxima_nova_rgregular";
+$proxima-nova-bold: "proxima_nova_rgbold";
+$proxima-nova-semibold: "proxima_novasemibold";
+$proxima-nova-light: "proxima_novalight";
+$proxima-nova-italic: "proxima_novaregular_italic";
+$proxima-nova-thin: "proxima_nova_thinthin";
+
+// Proxima Nova Condensed
+$proxima-nova-condensed: "proxima_nova_cn_rgregular";
+$proxima-nova-condensed-bold: "proxima_nova_condensedSBd";
+$proxima-nova-condensed-light: "proxima_nova_condensedlight";
+$proxima-nova-condensed-italic: "proxima_nova_condensedRgIt";
+$proxima-nova-condensed-thin: "proxima_nova_cn_ththin";
+
+.proxima-nova { font-family: $proxima-nova; }
+.proxima-nova-bold { font-family: $proxima-nova-bold; }
+.proxima-nova-semibold { font-family: $proxima-nova-semibold; }
+.proxima-nova-thin { font-family: $proxima-nova-thin; }
+.proxima-nova-light { font-family: $proxima-nova-light; }
+.proxima-nova-italic { font-family: $proxima-nova-italic; }
+.proxima-nova-condensed { font-family: $proxima-nova-condensed; }
+.proxima-nova-condensed-bold { font-family: $proxima-nova-condensed-bold; }
+.proxima-nova-condensed-thin { font-family: $proxima-nova-condensed-thin; }
+.proxima-nova-condensed-light { font-family: $proxima-nova-condensed-light; }
+.proxima-nova-condensed-italic { font-family: $proxima-nova-condensed-italic; }
+
 .hidden {
     display: none;
 }
+
+/*************************** NAVIGATION BAR STYLES */
+.main_logo{
+  width: 150px;
+  padding-top: 7px;
+  margin-left: 15px;
+}
+
+.top_left_icon{
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 11px;
+}
+
 .navbar {
     margin-bottom: 0px;
+    padding-right: 60px;
 }
 
-.navbar-default {
-  background-color: #f5f5f5;
+
+.navbar-fixed-top {
+  background-color: #00102F;
+  border-bottom: 1px solid #000e2a;
+  height: 61px;
   margin-bottom: 0px;
   border-radius: 0px;
-  border-color: #f5f5f5;
 }
 
-.jumbotron{
-  margin-bottom: 0px;
-  height: 100vh;
-  color: white;
-  background:transparent;
+.navbar-fixed-bottom, .navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 80px;
+    z-index: 1030;
 }
+
+.nav a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-family: $proxima-nova-bold,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #223a69;
+}
+
+.navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 21px;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 19px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 81px;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #00102F;
+}
+
+
+.sidebar .nav > li > a {
+  position: relative;
+  display: block;
+}
+
+/*************************** FOUNDATION STYLES */
+
+
+body {
+    height: 100%;
+    margin-left: 80px;
+    margin-top: 62px;
+    margin-right: 0px;
+    font-family: $proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #00C5C5;
+    background: #EBEBF2; 
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    font-family: $proxima-nova-bold,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #211F51;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 0 0 25px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/*************************** BODY STYLES */
 
 .bg{
   background: url(Summarise_Header.png) no-repeat fixed;
@@ -49,16 +186,145 @@
   z-index: -1;
 }
 
-.sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
+.trophy-container{
+  background-color: #f5f5f5;
+  position: fixed;
+  width: 100%;
+  display: block;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 40px;
 }
+
+.book-button {
+  float: right;
+}
+
+/******************* CONTAINER/SECTION STYLES */
+
+
+.jumbotron {
+  padding: 30px;
+  width: 100%;
+  height: 240px;
+  margin-bottom: 0px;
+  color: inherit;
+  background-color: #fff;
+}
+
+.wrap {
+    position: relative;
+    margin: 3em;
+    overflow: hidden;
+}
+
+.well {
+  display: inline-block;
+  height: 225px;
+  width: 200px;
+  overflow: hidden;
+}
+
+
+#user_goals{
+  display: inline-block;
+  height: 50px;
+  width: 300px;
+  overflow: hidden;
+}
+
+
+.container { 
+  width: 100%;
+}
+
+.flex ul li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+
+/* Frame */
+.frame { 
+  padding-left: 50px;
+  padding-top: 25px; 
+  height: 250px;
+  overflow: scroll; 
+}
+.frame .slidee { 
+  margin: 0; padding: 1em; 
+}
+
+
+/* Scrollbar */
+.scrollbar {
+  margin: 0 0 1em 0;
+  height: 2px;
+  background: #ccc;
+  line-height: 0;
+}
+.scrollbar .handle {
+  width: 100px;
+  height: 100%;
+  background: #292a33;
+  cursor: pointer;
+}
+.scrollbar .handle .mousearea {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+/* Pages */
+.pages {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+  text-align: center;
+}
+.pages li {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 4px;
+  text-indent: -999px;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
+}
+.pages li:hover {
+  background: #aaa;
+}
+.pages li.active {
+  background: #666;
+}
+
+/* Controls */
+.controls { margin: 25px 0; text-align: center; }
+
+/* One Item Per Frame example*/
+.oneperframe { height: 300px; line-height: 300px; }
+.oneperframe ul li { width: 1140px; }
+.oneperframe ul li.active { background: #333; }
+
+/* Crazy example */
+.crazy ul li:nth-child(2n) { width: 100px; margin: 0 4px 0 20px; }
+.crazy ul li:nth-child(3n) { width: 300px; margin: 0 10px 0 5px; }
+.crazy ul li:nth-child(4n) { width: 400px; margin: 0 30px 0 2px; }
+
+.items { margin: 0; padding: 5px; list-style: none; }
+.items li { 
+  float: left; 
+  width: 235px; 
+  height: 300px; 
+  margin: 5px; 
+  line-height: 300px; 
+  font-size: 40px; color: #fff; background: #292a33; text-align: center; }
