@@ -12,11 +12,10 @@
   <% end %>
 
   <div class="form-inputs">
-    <%= f.input :set_goal %>
+    <%= f.input :set_goal, :input_html => {:style => 'width: 250px'} %>
    </div>
   <div class="form-actions">
     <%= f.button :submit %>
-    <%= f.input :met_goal %>
   </div>
 
   <div class="hidden">

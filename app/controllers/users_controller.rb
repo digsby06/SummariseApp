@@ -7,8 +7,11 @@ before_action :set_user, only: [:show]
 
   def show
   @books = Book.all
-  @goals = Goal.all
+  @goals = Goal.all 
+  @summaries = Summary.all 
   end
+  
+
   
  
   

@@ -1,6 +1,7 @@
 <% if current_user %>
     <div class="sidebar">
           <ul class="nav nav-sidebar">
+          	<li> <%= image_tag("Pages-icon.png", :alt => "Pages", :title => "Summarise", class: "top_left_icon") %></li>
 
             <li> <%= link_to(image_tag("profile-icon.png", :alt => "Profile", :title => "Profile"), user_path(current_user.username)) %></li>
             <li><%= link_to(image_tag("summary-icon.png", :alt => "Summary", :title => "Summaries"), summaries_path(current_user.username))%></li>
