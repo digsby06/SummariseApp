@@ -1,1 +1,39 @@
-show.html.erb
+<div class="jumbotron" id="user_header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h2><%= @user.username %><br><p>Favorite Book: <%= @user.favorite_book %></p></h2>
+				
+			</div>
+			<div class="col-md-5">
+				<%= render "users/trackpages" %>
+			</div>
+			<div class="col-md-4">
+				<%= render "users/view_goals" %>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-md-3">
+				<p><%= @user.bio %> </p>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<div class="container">
+	<div class="wrap">
+		<%= render "users/my_summaries" %>
+	</div>
+</div>
+
+<div class="container">
+	<div class="wrap">
+		<%= render "users/trophycase" %>
+	</div>
+</div>
+
+
+
+
+
+

@@ -9,7 +9,13 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
   protected
 
   def configure_permitted_parameters
+<<<<<<< HEAD
 	devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :email, :password, :password_confimation)}
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :email, :password, :password_confimation, :current_password)}
 	end
+=======
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:username, :email, :password, :password_confimation)}
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :email, :password, :password_confimation, :current_password)}
+  end
+>>>>>>> 08b38067a5c9d9ee496ba07fb86177964d7a6431
 end

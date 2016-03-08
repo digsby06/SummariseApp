@@ -11,6 +11,7 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
+    @goals = Goal.all
   end
 
   # GET /goals/new
@@ -69,9 +70,15 @@ class GoalsController < ApplicationController
       @goal = Goal.find(params[:id])
     end
 
+<<<<<<< HEAD
      def set_comment
       @goals = Goal.find(params[:id])
   end 
+=======
+    def set_comment
+      @goals = Goal.find(params[:id])
+    end 
+>>>>>>> 08b38067a5c9d9ee496ba07fb86177964d7a6431
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params

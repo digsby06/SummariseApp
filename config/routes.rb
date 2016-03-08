@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :users, only: [:show, :index]
 
+<<<<<<< HEAD
+=======
+  get '/goals/:id' => 'goal#index'
+  get '/summaries/:id' => 'summary#index'
+
+>>>>>>> 08b38067a5c9d9ee496ba07fb86177964d7a6431
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

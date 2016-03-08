@@ -10,6 +10,7 @@ class SummariesController < ApplicationController
   # GET /summaries/1
   # GET /summaries/1.json
   def show
+    @summaries = Summary.all 
   end
 
   # GET /summaries/new
