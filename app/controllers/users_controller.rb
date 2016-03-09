@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+   class UsersController < ApplicationController
 before_action :set_user, only: [:show]
   
   def index
@@ -6,9 +6,9 @@ before_action :set_user, only: [:show]
   end
 
   def show
-  @books = Book.all
-  @goals = Goal.all 
-  @summaries = Summary.all 
+  	@summaries = Summary.all
+    @books = Book.all
+    @goals = Goal.all 
   end
   
 

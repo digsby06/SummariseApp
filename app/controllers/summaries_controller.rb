@@ -22,6 +22,7 @@ class SummariesController < ApplicationController
   def edit
   end
 
+
   # POST /summaries
   # POST /summaries.json
   def create

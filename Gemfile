@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'tzinfo-data'
 gem 'devise', '~> 4.0.0.rc1'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'simple_form'
