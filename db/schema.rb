@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160308123215) do
 
   create_table "goals", force: :cascade do |t|
     t.text     "set_goal"
-    t.boolean  "met_goal"
+    t.boolean  "met_goal"    default: "false"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"

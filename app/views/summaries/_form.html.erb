@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-<%= form_for(@summary) do |f| %>
-  <% if @summary.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@summary.errors.count, "error") %> prohibited this summary from being saved:</h2>
 
-      <ul>
-      <% @summary.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-=======
 <%= simple_form_for(@summary) do |f| %>
    <% if @summary.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +16,6 @@
     <%= f.input :post_title, :input_html => {:style => 'width: 200px'} %>
     <%= f.input :summary_entry, :input_html => {:style => 'width: 200px'} %>
   </div>
->>>>>>> 08b38067a5c9d9ee496ba07fb86177964d7a6431
 
   <div class="field">
     <%= f.label :post_title %><br>

@@ -31,12 +31,19 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to goals_path, notice: 'Goal was successfully created.' }
         format.json { render :show, status: :created, location: @goal }
       else
         format.html { render :new }
         format.json { render json: @goal.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def met
+      @goal.goal_met
+      respond_to do |format|
+          format.html {redirect_to users_path, notice: "Goal Completed"}
     end
   end
 
@@ -70,15 +77,9 @@ class GoalsController < ApplicationController
       @goal = Goal.find(params[:id])
     end
 
-<<<<<<< HEAD
      def set_comment
       @goals = Goal.find(params[:id])
   end 
-=======
-    def set_comment
-      @goals = Goal.find(params[:id])
-    end 
->>>>>>> 08b38067a5c9d9ee496ba07fb86177964d7a6431
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goal_params
