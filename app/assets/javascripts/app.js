@@ -1,0 +1,1 @@
+var summariseApp = angular.module('summariseApp', ['ui.bootstrap', 'angular-svg-round-progress']);

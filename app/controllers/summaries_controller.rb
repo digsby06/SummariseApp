@@ -5,6 +5,7 @@ class SummariesController < ApplicationController
   # GET /summaries.json
   def index
     @summaries = Summary.all
+    @summary = Summary.new
   end
 
   # GET /summaries/1
@@ -29,7 +30,7 @@ class SummariesController < ApplicationController
 
     respond_to do |format|
       if @summary.save
-        format.html { redirect_to @summary, notice: 'Summary was successfully created.' }
+        format.html { redirect_to user_path(current_user.username), notice: 'Summary was successfully created.' }
         format.json { render :show, status: :created, location: @summary }
       else
         format.html { render :new }

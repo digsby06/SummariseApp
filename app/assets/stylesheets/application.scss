@@ -74,22 +74,28 @@ $proxima-nova-condensed-thin: "proxima_nova_cn_ththin";
 
 .navbar {
     margin-bottom: 0px;
-    padding-right: 60px;
+    padding-right: 62px;
 }
 
 
 .navbar-fixed-top {
-  background-color: #00102F;
-  border-bottom: 1px solid #000e2a;
+  background-color: #FF8A3B;
   height: 61px;
   margin-bottom: 0px;
   border-radius: 0px;
 }
-
+.welcome-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 61px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+}
 .navbar-fixed-bottom, .navbar-fixed-top {
     position: fixed;
     right: 0;
-    left: 80px;
+    left: 81px;
     z-index: 1030;
 }
 
@@ -101,15 +107,17 @@ $proxima-nova-condensed-thin: "proxima_nova_cn_ththin";
 
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
-    background-color: #223a69;
+    background-color: #394046;
 }
+
+
 
 .navbar-nav > li > a {
     padding-top: 20px;
     padding-bottom: 21px;
 }
 
-.nav > li > a {
+.nav .nav-sidebar > li > a {
   position: relative;
   display: block;
   padding: 10px 19px;
@@ -125,14 +133,94 @@ $proxima-nova-condensed-thin: "proxima_nova_cn_ththin";
     display: block;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #00102F;
+    background-color: #2E353B;
 }
 
 
 .sidebar .nav > li > a {
   position: relative;
   display: block;
+  padding-left: 18px;
 }
+
+.sidebar .nav > li {
+  width: 200px
+}
+
+#side-icons span{
+    background:#2E353B;
+    border: 5px solid #2E353B;
+    color: #fff;
+    font-size: 11px;
+    height: 30px;
+    width: 30px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    top: 0px;
+    left: -12px;
+    display:none;
+    padding:0 20px;
+    
+}
+
+#side-icons span:after{
+    content:'';
+    position:absolute;
+    bottom:-10px; 
+    width:10px;
+    height:10px;
+    border-bottom:5px solid #2E353B;
+    border-right:5px solid #2E353B;
+    background:#2E353B;
+    top: 30%;
+    right:98%;
+    margin-left:-10px;
+    -moz-transform:rotate(125deg);
+    -webkit-transform:rotate(125deg);
+    transform:rotate(130deg);
+}
+#side-icons ul{
+    position:relative;
+    cursor:pointer;
+}
+
+#side-icons li:hover span{
+    display:block;
+}
+
+/*************************** Login Form Style */
+
+#greeting {
+  padding-left: 125px;
+  padding-top: 35px;
+  padding-right: 125px;
+}
+
+.templatemo-login-form-2 {
+  background-color: rgba(13,13,13,0.25);
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 300;
+  max-width: 650px;
+  padding: 0 30px 30px 30px;
+  margin: 30px auto 0 auto;
+}
+.templatemo-login-form-2 h1 { color: #fff; margin-bottom: 40px; }
+.templatemo-login-form-2 a { color: #DBDBDB; }
+.templatemo-login-form-2 .form-control {
+  background-color: rgba(83, 78, 78, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+  color: rgb(255,255,255);
+}
+.templatemo-login-form-2 .templatemo-input-icon-container .fa { color: rgb(190, 190, 190); }
+.templatemo-login-form-2 .control-label { margin-bottom: 10px; }
+.templatemo-login-form-2 .btn { width: 100%; }
+.templatemo-login-form-2 .btn-social { max-width: 220px; }
+.templatemo-login-form-2 label { font-weight: 400; }
+.templatemo-login-form-2 .templatemo-one-signin { border-right: 1px solid rgba(200, 200, 200, 0.5); }
+
 
 /*************************** FOUNDATION STYLES */
 
@@ -140,11 +228,11 @@ $proxima-nova-condensed-thin: "proxima_nova_cn_ththin";
 body {
     height: 100%;
     margin-left: 80px;
-    margin-top: 62px;
+    margin-top: 61px;
     margin-right: 0px;
     font-family: $proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #00C5C5;
-    background: #EBEBF2; 
+    background: #EDEFF0; 
 }
 
 html {
@@ -158,16 +246,59 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 15px;
+    text-align: center;
     font-family: $proxima-nova-bold,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #211F51;
+    color: #00C5C5;
     letter-spacing: 1px;
 }
 
 p {
     margin: 0 0 25px;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.5;
+}
+
+
+/********************************** Circle Avatar Styles */
+
+.circle {
+  line-height: 0;   /* remove line-height */ 
+  display: inline-block;  /* circle wraps image */
+  margin: 5px;
+  margin-left: 24px;
+  border-radius: 50%; /* relative value */
+  border: 3px solid white;/* border width   */
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.4);  
+  transition: linear 0.25s;
+}
+.circle img {
+  border-radius: 50%; /* relative value for
+           adjustable image size */
+}
+.circle:hover {
+  transition: ease-out 0.3s;
+  transform: scale(0.8) rotate(20deg);
+}
+a.circle { color: transparent; } /* IE fix: removes blue border */  
+
+/*************************** PROGRESS BAR STYLES */
+.round-progress-wrapper{
+  width: auto;
+  position: relative;
+  padding-left: 90px
+}
+
+/*************************** Header Styles */
+
+.goal-header {
+    margin-left: 425px;
+    margin-right: 400px;
+}
+
+.summary-header {
+    margin-left: 425px;
+    margin-right: 400px;
 }
 
 /*************************** BODY STYLES */
@@ -202,6 +333,11 @@ p {
 
 /******************* CONTAINER/SECTION STYLES */
 
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 200;
+}
 
 .jumbotron {
   padding: 30px;
@@ -225,13 +361,12 @@ p {
   overflow: hidden;
 }
 
-
-#user_goals{
-  display: inline-block;
-  height: 50px;
-  width: 300px;
-  overflow: hidden;
+#trophycase {
+  margin-right: 10px;
+  margin-left: 10px;
 }
+
+
 
 
 .container { 
@@ -244,6 +379,21 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+
+/******************* USER PROFILE PAGE */
+#user_goals{
+  display: inline-block;
+  height: 150px;
+  width: 300px;
+  padding-left: 50px;
+  overflow: hidden;
+}
+
+#profile-description p {
+  font-size: 12px; color: #2E353B;
+  text-align: center;
+  margin-top: 5px;
 }
 
 

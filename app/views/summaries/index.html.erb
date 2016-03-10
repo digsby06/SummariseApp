@@ -1,18 +1,55 @@
 <div class="jumbotron" id="summary_header">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-12">
         <h2>Recent Summaries</h2>
+          <%= render 'form' %>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
+
 
 <div class="container">
   <div class="wrap">
 
+<% if @summaries.presence %>
 
+<div>
+  <% @summaries.sort_by{|t| - t.created_at.to_i}.each do |summary| %>
+  
+      <div class="well summary_all">
+        
+        <div class="summary-copy">
+           <small><em><%= time_ago_in_words(summary.created_at) %> ago</em></small><br>
+          <h3><%= link_to summary.post_title, summary %></h3><br>
+          <%= summary.summary_entry %>
+          <p><%= summary[0..250] %>... <%= link_to '[READ MORE]', summary %>
+              </p>
+        </div>
 
+        <div class="summary-controls">
+            <% if user_signed_in? && current_user == summary.user %>
+              <%= link_to edit_summary_path(summary), class: "btn btn-sm btn-default pull-right" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+                <% end %>
+              <%= link_to summary, method: :delete, data: { confirm: 'Are you sure you want to delete this?' }, class: "btn btn-sm btn-default pull-right" do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+
+    <% end %>
+    </div>
+
+    <% else %>
+  
+  <h3>There are no summaries yet!</h3>
+<% end %>
+
+<%= link_to 'New Summary', new_summary_path %>
 </div>
 </div>
 

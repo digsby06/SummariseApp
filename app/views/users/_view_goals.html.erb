@@ -1,18 +1,17 @@
 <%if current_user %>
-<h2>My Goals</h2>
+<h2>Goals</h2>
 	
 	<div>
-		<% @goals.each do |goal| %>
 			<div id="user_goals">
 				<div class="flex">
-					<ul>
-						<li><%= goal.set_goal %></li>
-						<li><%= link_to 'Edit', edit_goal_path(goal) %> | <%= link_to 'Delete', goal, method: :delete, data: {confirm: 'Are you sure?'} %></li>
-					<ul>
+					<ul class="list-group">
+		<% @goals.each do |goal| %>
+		
+						<li class="list-group-item"><%= goal.set_goal %></li>
+		<% end %>
+			<ul>
 				</div>
 			</div>
-		<% end %>
 	</div>
 
 <% end %>
-

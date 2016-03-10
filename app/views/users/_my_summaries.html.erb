@@ -1,1 +1,27 @@
-<h2>Summaries</h2>
+<%if current_user %>
+<h2>My Recent Summaries</h2>
+	
+	<div>
+	  <% @summaries.sort_by{|t| - t.created_at.to_i}.each do |summary| %>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+              <div class="panel-heading">
+            <h3> <%= summary.post_title %></h3>
+          </div>
+          <div class="panel-body">
+            <p> <%= summary.summary_entry[0..250] %> </p>
+            <p>... <%= link_to '[READ MORE]', summary %> </p>
+          </div>
+        </div>
+       </div>
+    <% end %>
+		<div class="controls center">
+			<div class="book-button">
+				<%= link_to "Add Summary", new_summary_path, class: 'btn btn-info' %>
+				<%= link_to "All Summaries", summaries_path, class: 'btn btn-info'%>
+			</div>
+		</div>
+	</div>
+
+<% end %>
+

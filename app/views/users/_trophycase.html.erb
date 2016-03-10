@@ -4,9 +4,11 @@
 
 	<div class="frame">
 		<% @books.each do |book| %>
-			<div class="well">
+			<div class="well" id="trophycase">
 				<h4><%= book.book_title %><br><small><%= book.book_author %></small></h4>
-				<p><%= book.percentage(book.page_amount, book.last_page_read)%></p>
+				<div class="percentage">
+				<p><%= link_to book.percentage(book.page_amount, book.last_page_read), '#'%></p>
+				</div>
 				<h6><%= link_to 'Edit', edit_book_path(book) %> | <%= link_to 'Delete', book, method: :delete, data: {confirm: 'Are you sure?'} %></h6> 
 			</div>
 		<% end %>

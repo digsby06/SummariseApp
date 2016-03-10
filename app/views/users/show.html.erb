@@ -1,20 +1,21 @@
 <div class="jumbotron" id="user_header">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<h2><%= @user.username %><br><p>Favorite Book: <%= @user.favorite_book %></p></h2>
-				
+			<div class="col-md-2" id="profile-description">
+				<div class="circle">
+				<%= image_tag @user.image.url(:thumb) %>
+				</div>
+				<p><em><%= @user.bio %></em></p>
 			</div>
-			<div class="col-md-5">
+			<div class="col-md-2">
+				<h2><%= @user.username %></h2>
+				<p>Favorite Book: <br><%= @user.favorite_book %></p>
+			</div>
+			<div class="col-md-4">
 				<%= render "users/trackpages" %>
 			</div>
 			<div class="col-md-4">
 				<%= render "users/view_goals" %>
-			</div>
-		</div>	
-		<div class="row">
-			<div class="col-md-3">
-				<p><%= @user.bio %> </p>
 			</div>
 		</div>	
 	</div>
